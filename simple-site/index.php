@@ -12,6 +12,7 @@
     <?php
       function get_server_name(){
       $server_name = shell_exec('uname -n');
+      //$server_name = shell_exec('curl http://169.254.169.254/latest/meta-data/hostname');
       return $server_name;
       }
       $server_name = get_server_name();
