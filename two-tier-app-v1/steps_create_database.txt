@@ -1,0 +1,22 @@
+1. sudo to root user
+sudo -s
+
+2. Login to mysql database asroot user
+mysql -u root
+
+3. Run below commands one after the other on the mysql> prompt. If copy pasting from this file, ensure every command appears on a single line and does not get pasted as 2 separate lines (especially the last command below)
+
+create user 'user1'@'%' identified by 'password';
+
+create user 'user1'@'localhost' identified by 'password';
+
+create database test2;
+
+use test2;
+
+grant all privileges on test2.* to 'user1'@'%';
+
+grant all privileges on test2.* to 'user1'@'localhost';
+
+create table Persons (ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY, FirstName CHAR(40) NOT NULL, LastName CHAR(40) NOT NULL, ContactNo BIGINT NOT NULL, Comments TEXT);
+
